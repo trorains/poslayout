@@ -1,10 +1,5 @@
 package com.pos;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.pos.R;
-
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
@@ -23,11 +18,15 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class Login_Fragment extends Fragment implements OnClickListener {
 	private static View view;
@@ -57,14 +56,14 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 	private void initViews() {
 		fragmentManager = getActivity().getSupportFragmentManager();
 
-		emailid = (EditText) view.findViewById(R.id.login_emailid);
-		password = (EditText) view.findViewById(R.id.login_password);
-		loginButton = (Button) view.findViewById(R.id.loginBtn);
-		forgotPassword = (TextView) view.findViewById(R.id.forgot_password);
-		signUp = (TextView) view.findViewById(R.id.createAccount);
-		show_hide_password = (CheckBox) view
+		emailid = view.findViewById(R.id.login_emailid);
+		password = view.findViewById(R.id.login_password);
+		loginButton = view.findViewById(R.id.loginBtn);
+		forgotPassword = view.findViewById(R.id.forgot_password);
+		signUp = view.findViewById(R.id.createAccount);
+		show_hide_password = view
 				.findViewById(R.id.show_hide_password);
-		loginLayout = (LinearLayout) view.findViewById(R.id.login_layout);
+		loginLayout = view.findViewById(R.id.login_layout);
 
 		// Load ShakeAnimation
 		shakeAnimation = AnimationUtils.loadAnimation(getActivity(),
@@ -179,8 +178,17 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 					"Your Email Id is Invalid.");
 		// Else do login and do your stuff
 		else
-			Toast.makeText(getActivity(), "Do Login.", Toast.LENGTH_SHORT)
+			Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_SHORT)
 					.show();
+		fragmentManager
+				.beginTransaction()
+				.setCustomAnimations(R.anim.right_enter, R.anim.left_out)
+				.replace(R.id.frameContainer,
+						new Home_Fragment(),
+						Utils.Home_Fragment).commit();
+
 
 	}
+
 }
+

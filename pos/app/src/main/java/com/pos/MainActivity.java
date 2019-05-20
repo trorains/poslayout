@@ -1,7 +1,5 @@
 package com.pos;
 
-import com.pos.R;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -51,19 +49,26 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	public void onBackPressed() {
 
-		// Find the tag of signup and forgot password fragment
+		// Find the tag of signup and forgot password fragment and home fragment
 		Fragment SignUp_Fragment = fragmentManager
 				.findFragmentByTag(Utils.SignUp_Fragment);
 		Fragment ForgotPassword_Fragment = fragmentManager
 				.findFragmentByTag(Utils.ForgotPassword_Fragment);
-
-		// Check if both are null or not
-		// If both are not null then replace login fragment else do backpressed
+		Fragment Home_Fragment = fragmentManager
+				.findFragmentByTag(Utils.Home_Fragment);
+		Fragment Employee_Fragment = fragmentManager
+				.findFragmentByTag(Utils.Employee_Fragment);
+		// Check if the three are null or not
+		// If the three are not null then replace login fragment else do backpressed
 		// task
 
 		if (SignUp_Fragment != null)
 			replaceLoginFragment();
 		else if (ForgotPassword_Fragment != null)
+			replaceLoginFragment();
+		else if (Home_Fragment != null)
+			replaceLoginFragment();
+		else if (Employee_Fragment != null)
 			replaceLoginFragment();
 		else
 			super.onBackPressed();

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_Fragment">
+
+    <TextView
+        android:id="@+id/textpurchases"
+        android:layout_width="100dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="464dp"
+        android:text="Purchases"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textsales"
+        android:layout_width="100dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="468dp"
+        android:text="Sales"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textemployees"
+        android:layout_width="100dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="340dp"
+        android:text="Employees"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/employee"
+        android:layout_width="79dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="252dp"
+        android:src="@mipmap/employee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logos"
+        android:layout_width="87dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="172dp"
+        android:src="@mipmap/logos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texstock"
+        android:layout_width="100dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="348dp"
+        android:text="Stock"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/stock"
+        android:layout_width="109dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="252dp"
+        android:src="@mipmap/stock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/purchases"
+        android:layout_width="107dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="392dp"
+        android:src="@mipmap/purchases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sales"
+        android:layout_width="106dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="384dp"
+        android:src="@mipmap/sales"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

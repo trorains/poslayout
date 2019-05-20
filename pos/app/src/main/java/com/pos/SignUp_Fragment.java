@@ -1,15 +1,11 @@
 package com.pos;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.pos.R;
-
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,7 +16,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SignUp_Fragment extends Fragment implements OnClickListener {
+    private static FragmentManager fragmentManager;
 	private static View view;
 	private static EditText fullName, emailId, mobileNumber,
 			password, confirmPassword;
@@ -43,15 +43,15 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 
 	// Initialize all views
 	private void initViews() {
-		fullName = (EditText) view.findViewById(R.id.fullName);
-		emailId = (EditText) view.findViewById(R.id.userEmailId);
-		mobileNumber = (EditText) view.findViewById(R.id.mobileNumber);
+        fullName = view.findViewById(R.id.fullName);
+        emailId = view.findViewById(R.id.userEmailId);
+        mobileNumber = view.findViewById(R.id.mobileNumber);
 
-		password = (EditText) view.findViewById(R.id.password);
-		confirmPassword = (EditText) view.findViewById(R.id.confirmPassword);
-		signUpButton = (Button) view.findViewById(R.id.signUpBtn);
-		login = (TextView) view.findViewById(R.id.already_user);
-		terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions);
+        password = view.findViewById(R.id.password);
+        confirmPassword = view.findViewById(R.id.confirmPassword);
+        signUpButton = view.findViewById(R.id.signUpBtn);
+        login = view.findViewById(R.id.already_user);
+        terms_conditions = view.findViewById(R.id.terms_conditions);
 
 		// Setting text selector over textviews
 		@SuppressLint("ResourceType") XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
@@ -135,6 +135,12 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 		else
 			Toast.makeText(getActivity(), "SignUp Valid.", Toast.LENGTH_SHORT)
 					.show();
+        fragmentManager
+                .beginTransaction()
+                .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
+                .replace(R.id.frameContainer,
+                        new Home_Fragment(),
+                        Utils.Home_Fragment).commit();
 
 	}
 }

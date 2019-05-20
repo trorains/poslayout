@@ -8,6 +8,9 @@ public class Utils {
 	//Fragments Tags
 	public static final String Login_Fragment = "Login_Fragment";
 	public static final String SignUp_Fragment = "SignUp_Fragment";
+    public static final String Home_Fragment = "Home_Fragment";
+    public static final String Employee_Fragment = "Employee_Fragment";
 	public static final String ForgotPassword_Fragment = "ForgotPassword_Fragment";
-	
+
+
 }
